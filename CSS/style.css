@@ -11,6 +11,8 @@
 /* end variable */
 /* start Global Rules */
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
 }
@@ -29,8 +31,6 @@ a {
   text-decoration: none;
 }
 
-body {
-}
 .container {
   padding-left: 15px;
   padding-right: 15px;
@@ -382,6 +382,12 @@ header nav .form i {
   align-items: center;
 }
 
+@media (max-width: 767px) {
+  .design-container {
+    transform: translateY(50%);
+  }
+}
+
 .design .image,
 .design .texts {
   flex: 1;
@@ -480,12 +486,13 @@ header nav .form i {
   bottom: -100%;
   background-color: #fff;
   width: 100%;
-  padding: 0 20px;
+  padding: 20px;
   transition: 0.3s;
 }
 
 .box .caption h4 {
   font-weight: 500;
+  margin-bottom: 10px;
 }
 
 .box .caption p {
@@ -545,6 +552,7 @@ header nav .form i {
   border: none;
   outline: none;
   padding: 10px 20px;
+  cursor: pointer;
 }
 /* end video */
 /* start about */
@@ -679,23 +687,13 @@ header nav .form i {
   position: relative;
   min-height: 100px;
   line-height: 2;
-}
-
-.our-skills .testimonials .text::before {
-  content: "";
-  position: absolute;
-  bottom: -15px;
-  width: 100%;
-  height: 1px;
-  background-color: #888;
+  border-bottom: 1px solid #888;
 }
 
 .our-skills .testimonials .content .text p {
-  position: absolute;
-  bottom: -20px;
-  right: 0;
   color: #777;
   font-size: 14px;
+  text-align: right;
 }
 
 .testimonials .bullets {
@@ -860,6 +858,10 @@ header nav .form i {
   padding: 10px 40px;
 }
 
+.pricing .cards-container .card-body p {
+  padding: 20px 0;
+}
+
 .pricing .cards-container .card-body .feature:not(:last-child) {
   border-bottom: 1px solid var(--main-color);
 }
@@ -882,7 +884,7 @@ header nav .form i {
 
 .pricing .pricing-footer {
   text-align: center;
-  margin: 10px 0;
+  margin: 50px 0 0;
 }
 
 .pricing .pricing-footer p {
@@ -894,8 +896,9 @@ header nav .form i {
   background-color: var(--main-color);
   color: #fff;
   width: fit-content;
-  margin: 10px auto 0;
+  margin: 40px auto 0;
   padding: 15px 25px;
+  border: 1px solid transparent;
   transition: 0.3s ease;
 }
 
@@ -1048,6 +1051,7 @@ textarea:focus {
   bottom: -100px;
   color: #fff;
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .contact-us .contact-info textarea {
