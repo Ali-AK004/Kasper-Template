@@ -1142,6 +1142,7 @@ textarea:focus {
 
 .footer .socials i {
   cursor: pointer;
+  color: white;
 }
 
 .footer .footer-paragraph {
@@ -1149,7 +1150,7 @@ textarea:focus {
   margin-top: 80px;
 }
 
-.footer .footer-paragraph span {
+.footer .footer-paragraph span:last-child {
   color: var(--main-color);
   font-weight: bold;
 }
