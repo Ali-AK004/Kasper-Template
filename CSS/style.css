@@ -126,7 +126,7 @@ header {
   position: absolute;
   left: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 9999;
 }
 
 header .container {
@@ -147,8 +147,11 @@ header .container::after {
   left: 15px;
 }
 
-header .logo img {
-  height: 40px;
+header .logo {
+  display: flex;
+  color: white;
+  align-items: center;
+  gap: 10px;
 }
 
 header nav {
@@ -201,7 +204,7 @@ header nav ul li a {
   font-size: 14px;
   transition: 0.3s;
   position: relative;
-  z-index: 2;
+  z-index: 5;
 }
 
 header nav ul li a.active,
@@ -322,7 +325,7 @@ header nav .form i {
 
 .landing-imgs .bullets,
 .landing-imgs > i {
-  z-index: 9999;
+  z-index: 30;
 }
 
 @media (max-width: 767px) {
