@@ -57,6 +57,14 @@ const prevSlide = () => {
   goToSlide(currentIndex - 1);
 };
 
+const BulletClicked = (index) => {
+  goToSlide(index);
+};
+
+bullets.forEach((bullet, index) => {
+  bullet.addEventListener("click", () => BulletClicked(index));
+});
+
 showSlide(currentIndex);
 
 // message Characters counter
