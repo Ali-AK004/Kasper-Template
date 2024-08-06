@@ -32,20 +32,54 @@
             <li><a href="#Pricing">Pricing</a></li>
             <li><a href="#Contact">Contact</a></li>
           </ul>
-          <div class="form">
-            <i class="fas fa-search"></i>
-          </div>
+          <form>
+            <div class="form">
+              <i class="fas fa-search"></i>
+            </div>
+            <input
+              type="text"
+              name="search"
+              placeholder="Search for..."
+              autofocus
+            />
+          </form>
         </nav>
       </div>
     </header>
     <section class="landing">
-      <div class="overlay"></div>
+      <!-- <div class="overlay"></div> -->
+      <div class="landing-imgs">
+        <div class="imgs">
+          <img src="Images/landing.jpg" />
+          <img
+            src="https://images.pexels.com/photos/624015/pexels-photo-624015.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1"
+          />
+          <img
+            src="https://images.pexels.com/photos/2104152/pexels-photo-2104152.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=1"
+          />
+        </div>
+        <ul class="bullets">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <i
+          class="fa-solid fa-angle-left change left"
+          id="prev"
+          onclick="prevSlide()"
+        ></i>
+        <i
+          class="fa-solid fa-angle-right change right"
+          id="next"
+          onclick="nextSlide()"
+        ></i>
+      </div>
       <div class="texts">
         <div class="content">
-          <h2>
+          <h1>
             Hello World ! <br />
             We're Kasper We Make Art
-          </h2>
+          </h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
             suscipit iste adipisci corrupti quas repellendus amet facilis
@@ -54,13 +88,6 @@
           </p>
         </div>
       </div>
-      <i class="fa-solid fa-angle-left change left"></i>
-      <i class="fa-solid fa-angle-right change right"></i>
-      <ul class="bullets">
-        <li></li>
-        <li class="active"></li>
-        <li></li>
-      </ul>
     </section>
     <section class="services" id="services">
       <div class="container">
@@ -205,7 +232,7 @@
             </div>
           </div>
         </div>
-        <a href="#" class="btn">more</a>
+        <button class="btn">more</button>
       </div>
     </section>
     <section class="video">
@@ -422,10 +449,10 @@
       </div>
       <div class="pricing-footer">
         <p>Contact us if you have special request</p>
-        <a href="#">Contact Us</a>
+        <a href="mailto:ali.webdevx@gmail.com">Contact Us</a>
       </div>
     </section>
-    <div class="subscribe">
+    <section class="subscribe">
       <div class="container">
         <form action="">
           <i class="far fa-envelope fa-lg"></i>
@@ -437,7 +464,7 @@
           Mauris blan dit aliquet elit, eget tincidunt.
         </p>
       </div>
-    </div>
+    </section>
     <section class="contact-us" id="Contact">
       <div class="container">
         <div class="special-heading">contact us</div>
@@ -457,6 +484,7 @@
                 aria-expanded="false"
                 placeholder="Your message"
               ></textarea>
+              <p>Characters Count: <span class="count-number">0</span></p>
               <input type="submit" value="send message" />
             </form>
           </div>

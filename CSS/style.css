@@ -8,6 +8,14 @@
   background-color: var(--main-color);
   color: #fff;
 }
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+}
 /* end variable */
 /* start Global Rules */
 * {
@@ -15,6 +23,10 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 html {
@@ -149,6 +161,8 @@ header nav {
 header nav .toggle-menu {
   color: white;
   font-size: 22px;
+  cursor: pointer;
+  margin-right: 10px;
 }
 
 @media (min-width: 768px) {
@@ -165,7 +179,7 @@ header nav ul {
   header nav ul {
     display: none;
   }
-  header nav .toggle-menu:hover + ul {
+  header nav.openNav .toggle-menu + ul {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -196,11 +210,45 @@ header nav ul li a:hover {
   border-bottom: 1px solid var(--main-color);
 }
 
+header nav form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
+}
+
+header nav form input {
+  transform: scale(0);
+  width: 0;
+  color: white;
+  border: 1px solid white;
+  background-color: transparent;
+  outline: none;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+  transform-origin: right;
+  position: relative;
+}
+
+header nav form input.show {
+  transform: scale(1);
+  width: 200px;
+}
+
+@media screen and (max-width: 768px) {
+  header nav form input.show {
+    position: absolute;
+    top: 100%;
+    width: 250px;
+    right: 20px;
+  }
+}
+
 header nav .form {
   width: 40px;
   height: 30px;
   position: relative;
-  margin-left: 30px;
+  margin-left: 10px;
   border-left: 1px solid white;
   cursor: pointer;
 }
@@ -216,11 +264,20 @@ header nav .form i {
 /* end header section */
 /* start landing */
 .landing {
-  min-height: 100vh;
-  background-image: url(../Images/landing.jpg);
-  background-size: cover;
+  height: 100vh;
   position: relative;
   overflow: hidden;
+}
+
+.landing::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0 0 0 / 0.5);
+  z-index: 1;
 }
 
 .landing .texts {
@@ -233,10 +290,39 @@ header nav .form i {
   width: 50%;
   display: flex;
   justify-content: flex-end;
+  z-index: 19;
 }
 
 .landing .texts .content {
   max-width: 500px;
+}
+
+.landing-imgs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.landing-imgs .imgs {
+  width: 100vw;
+  height: 100vh;
+}
+
+.landing-imgs .imgs img {
+  display: none;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.landing-imgs img.activeImg {
+  display: block;
+}
+
+.landing-imgs .bullets,
+.landing-imgs > i {
+  z-index: 9999;
 }
 
 @media (max-width: 767px) {
@@ -246,21 +332,9 @@ header nav .form i {
   .landing .texts .content {
     max-width: 100%;
   }
-  .landing .change {
-    display: none;
-  }
 }
 
-.landing .overlay {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
-  background-color: rgba(0 0 0 / 0.5);
-}
-
-.landing .texts h2 {
+.landing .texts h1 {
   font-size: 32px;
   color: #fff;
   letter-spacing: 2px;
@@ -290,6 +364,11 @@ header nav .form i {
 
 .landing .right {
   right: 30px;
+}
+
+.landing .right.disabled {
+  color: #777;
+  cursor: no-drop;
 }
 
 .bullets {
@@ -440,6 +519,7 @@ header nav .form i {
   padding-top: var(--section-padding);
   padding-bottom: var(--section-padding);
 }
+
 .port-content .sections {
   display: flex;
   justify-content: center;
@@ -508,6 +588,8 @@ header nav .form i {
   width: fit-content;
   margin: 10px auto;
   text-transform: uppercase;
+  border: none;
+  cursor: pointer;
 }
 /* end portfolio */
 
@@ -1056,6 +1138,11 @@ textarea:focus {
 
 .contact-us .contact-info textarea {
   height: 200px;
+}
+
+.contact-us .contact-info .count-number {
+  color: var(--main-color);
+  font-weight: bold;
 }
 
 .contact-us .contact-text {
