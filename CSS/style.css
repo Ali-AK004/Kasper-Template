@@ -536,9 +536,10 @@ header nav .form i {
 .port-content .sections li {
   padding: 10px;
   font-size: 16px;
+  cursor: pointer;
 }
 
-.port-content .sections li.active-1 {
+.port-content .sections li.activeSet {
   background-color: var(--main-color);
   color: #fff;
 }
@@ -675,8 +676,9 @@ header nav .form i {
   padding-top: var(--section-padding);
   padding-bottom: var(--section-padding);
   text-align: center;
-  background-image: url("../images/stats.png");
+  background-image: url("https://images.pexels.com/photos/17485657/pexels-photo-17485657/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-depicts-how-ai-could-adapt-to-an-infinite-amount-of-uses-it-was-created-by-nidia-dias-as-part-of-the-visualising-ai-pr.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   background-size: cover;
+  background-position-y: -100px;
   position: relative;
 }
 .stats::before {
@@ -762,6 +764,18 @@ header nav .form i {
 .our-skills .testimonials {
   position: relative;
 }
+.our-skills .testimonials .testimonial-row {
+  display: flex;
+  width: 600px;
+  overflow-x: hidden;
+  gap: 50px;
+  position: relative;
+  right: 10px;
+}
+.our-skills .testimonials .testimonial-col {
+  flex: 1;
+  min-width: 560px;
+}
 .our-skills .testimonials .content {
   display: flex;
   align-items: center;
@@ -770,8 +784,10 @@ header nav .form i {
 }
 .our-skills .testimonials .content img {
   width: 100px;
+  height: 100px;
   border-radius: 50%;
   margin-right: 50px;
+  object-fit: cover;
 }
 
 .our-skills .testimonials .content .text {
@@ -1003,8 +1019,9 @@ header nav .form i {
 .subscribe {
   padding-top: var(--section-padding);
   padding-bottom: var(--section-padding);
-  background-image: url("../images/subscribe.jpg");
+  background-image: url("https://images.pexels.com/photos/1563005/pexels-photo-1563005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   background-size: cover;
+  background-position-y: -250px;
   position: relative;
   color: white;
 }
@@ -1208,7 +1225,7 @@ textarea:focus {
 }
 
 .footer .container a img {
-  margin-bottom: 10px;
+  margin-bottom: 40px;
   width: 200px;
 }
 
