@@ -147,11 +147,9 @@ header .container::after {
   left: 15px;
 }
 
-header .logo {
-  display: flex;
-  color: white;
-  align-items: center;
-  gap: 10px;
+header .logo img {
+  width: 200px;
+  max-width: 200px;
 }
 
 header nav {
