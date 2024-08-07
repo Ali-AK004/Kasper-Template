@@ -49,20 +49,11 @@ const goToSlide = (index) => {
   showSlide(currentIndex);
 };
 
-const nextSlide = () => {
-  goToSlide(currentIndex + 1);
-};
-
-const prevSlide = () => {
-  goToSlide(currentIndex - 1);
-};
-
-const BulletClicked = (index) => {
-  goToSlide(index);
-};
+prevBtn.addEventListener("click", () => goToSlide(currentIndex - 1));
+nextBtn.addEventListener("click", () => goToSlide(currentIndex + 1));
 
 bullets.forEach((bullet, index) => {
-  bullet.addEventListener("click", () => BulletClicked(index));
+  bullet.addEventListener("click", () => goToSlide(index));
 });
 
 showSlide(currentIndex);

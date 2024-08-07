@@ -605,6 +605,8 @@ header nav .form i {
 
 .video video {
   width: 100%;
+  height: 500px;
+  object-fit: cover;
 }
 
 .video .texts {
@@ -1201,8 +1203,9 @@ textarea:focus {
   text-align: center;
 }
 
-.footer .container img {
-  margin-bottom: 60px;
+.footer .container a img {
+  margin-bottom: 10px;
+  width: 200px;
 }
 
 .footer .paragraph {
